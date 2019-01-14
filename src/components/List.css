@@ -1,0 +1,10 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    font: 130 12px/1.5 Helvetica, Verdana, sans-serif;
+  }
+   
+li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    margin-left: 170px;
+}

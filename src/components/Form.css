@@ -1,0 +1,19 @@
+form {
+    margin: 30px 30px 30px 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    margin: 5px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.nameOfInput {
+    width: 200px;
+    padding-left: 40px;
+    font-weight: bold;
+  }
+  
