@@ -4,49 +4,26 @@ import './CreatedataApp.css';
 import Form from './Form';
 import List from './List';
 
-var data = require('./../NavigationTree.json');
+let data = require('./../NavigationTree.json');
 
 export default class App extends React.Component {
 
-	constructor(props) {
-	    super(props);
-	    this.state = {
-		    data: data,
-	        filteredData: data,
-	        displayChild: '',
-	        value: ''
-	    };
-	    this.filterOurData = this.filterOurData.bind(this);
-	    this.filterOurLocation = this.filterOurLocation.bind(this);
-	    this.filterOurService = this.filterOurService.bind(this);
-	    this.filterOurDeviceType = this.filterOurDeviceType.bind(this);
-    }
- 
-    render () {
-        return(
-            <div className='wrapper'>
+    state = {
+        data: data,
+        filteredData: data,
+        displayChild: '',
+        value: ''
+    };
 
-                <Form 
-                    data={this.state.data}
-                    value={this.state.value}
-                    filterOurData={this.filterOurData}
-                    filterOurLocation={this.filterOurLocation}
-                    filterOurService={this.filterOurService}
-                    filterOurDeviceType={this.filterOurDeviceType}
-                    />
+    // setData = () => {
+    //     let dataJson = require('./../NavigationTree.json');
+    //     this.setState({
+    //         data: dataJson,
+    //         filteredData: dataJson,
+    //     });
+    // };
 
-                <List 
-                    filteredData={this.state.filteredData}
-                    displayChild={this.state.displayChild}
-                    _renderChildren={this._renderChildren}
-                    expandParent={this.expandParent}
-                    />
-
-            </div>
-        );
-    }    
-
-    _renderChildren = (nodes) => {
+    renderChildren = (nodes) => {
         const result = nodes.map(el => {
           return (<li className={el.state === "up" ? "green" : "red"} key={el.id}> {el.name} </li>)
         });
@@ -63,11 +40,13 @@ export default class App extends React.Component {
 
     filterOurData = (event) => {
         this.setState({value: event.target.value});
-        if (event.target.value === "Choose vendor") {
-            this.setState({
-                filteredData: data
-            });
-        } else {
+
+        // if (event.target.value === "Choose vendor") {
+        //     this.setState({
+        //         filteredData: data
+        //     });
+        //     console.log("if", this.state.filteredData);
+        // } else {
             let filteredDataTemp = this.state.data.nodes.filter((item) => {
                 return item.vendor === event.target.value
             })
@@ -76,7 +55,10 @@ export default class App extends React.Component {
             this.setState({
                 filteredData: filteredData
             });
-        }
+            console.log(event.target.value);
+            console.log("out", this.state.filteredData);
+            // console.log("else", this.state.filteredData);
+        // }
     }
 
     filterOurLocation = (event) => {
@@ -132,4 +114,26 @@ export default class App extends React.Component {
             });
         }
     }
+
+    render () {
+        return(
+            <div className='wrapper'>
+                <Form 
+                    data={this.state.data}
+                    value={this.state.value}
+                    filterOurData={this.filterOurData}
+                    filterOurLocation={this.filterOurLocation}
+                    filterOurService={this.filterOurService}
+                    filterOurDeviceType={this.filterOurDeviceType}
+                    />
+
+                <List 
+                    filteredData={this.state.filteredData}
+                    displayChild={this.state.displayChild}
+                    _renderChildren={this.renderChildren}
+                    expandParent={this.expandParent}
+                    />
+            </div>
+        );
+    }    
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Form.css';
-// import Select from './Select';
 
 export default class App extends React.Component {
     render() {
@@ -29,33 +28,36 @@ export default class App extends React.Component {
                 <form>
                     <label>
                         <p className="nameOfInput">Vendor</p>
-                        <select onChange={this.props.filterOurData} value={this.props.value}>
+                        <select 
+                            onChange={this.props.filterOurData} 
+                            value={this.props.value}>
                             <option>Choose vendor</option>
                             {unique.map((element) => <option  key={element.toString()}>{element}</option>)}
                         </select>
                     </label>
-                    {/* <Select 
-                        filterOurData={this.props.filterOurData}
-                        value={this.props.value} 
-                        option={'Choose vendor'}
-                        unique={this.unique}/> */}
                     <label>
                         <p className="nameOfInput">Location</p>
-                        <select onChange={this.props.filterOurLocation}  value={this.props.value}>
+                        <select 
+                            onChange={this.props.filterOurLocation}  
+                            value={this.props.value}>
                             <option>Choose location</option>
                             {unique2.map((element) => <option key={element.toString()}>{element}</option>)}
                         </select>
                     </label>
                     <label>
                         <p className="nameOfInput">Service</p>
-                        <select  onChange={this.props.filterOurService} value={this.props.value}>
-                        <option>Choose service</option>
+                        <select  
+                            onChange={this.props.filterOurService} 
+                            value={this.props.value}>
+                            <option>Choose service</option>
                             {unique3.map((element) => <option key={element.toString()}>{element}</option>)}
                         </select>
                     </label>
                     <label>
                         <p className="nameOfInput">Device Type</p>
-                        <select onChange={this.props.filterOurDeviceType}  value={this.props.value}>
+                        <select 
+                            onChange={this.props.filterOurDeviceType}  
+                            value={this.props.value}>
                             <option>Choose device type</option>
                             {unique4.map((element) => <option key={element.toString()}>{element}</option>)}
                         </select>

@@ -3,23 +3,20 @@ import PropTypes from 'prop-types';
 
 import './List.css';
 
-export default class List extends React.Component {
-
-    render () {
-        return(
+const list = (props) => (
             <ul>
-                {this.props.filteredData.nodes.map(element => (
-                    <li key={element.id} onClick={() => this.props.expandParent(element.id)}>
+                {props.filteredData.nodes.map(element => (
+                    <li key={element.id} onClick={() => props.expandParent(element.id)}>
                         {element.name}
-                        {element.id === this.props.displayChild && element.nodes && this.props._renderChildren(element.nodes)}
+                        {element.id === props.displayChild && element.nodes && props._renderChildren(element.nodes)}
                     </li>
                 ))}{' '}
             </ul>
-        );
-    } 
-} 
+)
 
-List.propTypes = {
+export default list;
+
+list.propTypes = {
     filteredData: PropTypes.object.isRequired,
     expandParent: PropTypes.func.isRequired,
     displayChild: PropTypes.string.isRequired,
