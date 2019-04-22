@@ -1,9 +1,8 @@
 import React from 'react';
 
-import './CreatedataApp.css';
-import Form from './Form';
-import List from './List';
-
+import './App.css';
+import Form from './components/Form';
+import List from './components/List';
 
 export default class App extends React.Component {
 
@@ -15,7 +14,7 @@ export default class App extends React.Component {
     };
 
     componentDidMount() {
-        const data = require('./../NavigationTree.json');
+        const data = require('./NavigationTree.json');
         this.setState({
             data: data,
             filteredData: data

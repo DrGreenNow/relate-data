@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import CreatedataApp from './components/CreatedataApp';
+import App from './App';
 import './assets/index.css';
 
 ReactDOM.render(
-    <CreatedataApp />,
+    <App />,
     document.getElementById('root')
 );
