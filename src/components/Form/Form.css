@@ -1,0 +1,12 @@
+form {
+  margin: 30px 30px 30px 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  padding: 40px;
+}
+
+.WrapperForm {
+  width: 45%;
+  float: left;
+}
