@@ -1,11 +1,5 @@
 select {
-    margin: 5px auto;
     width: 250px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.WrapperSelect {
-    width: 250px;
-    margin: 0 auto;
 }

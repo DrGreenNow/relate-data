@@ -3,7 +3,8 @@ import React from "react";
 import "./App.css";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
-import Navbar from 'react-bootstrap/Navbar';
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/NavBar";
 
 export default class App extends React.Component {
   state = {
@@ -51,21 +52,19 @@ export default class App extends React.Component {
 
   render() {
     let view = (
-      <div>
-  {/* <Navbar bg="light"> */}
-    {/* <Navbar.Brand>Brand text</Navbar.Brand> */}
-  {/* </Navbar> */}
-        <Form
-          data={this.state.data}
-          filterData={this.filterData}
-        />
-        <List
-          filteredData={this.state.filteredData}
-          displayChild={this.state.displayChild}
-          renderChildren={this.renderChildren}
-          expandParent={this.expandParent}
-        />
-      </div>
+      <React.Fragment>
+        <Navbar />
+        <div className="flexContainer">
+          <Form data={this.state.data} filterData={this.filterData} />
+          <List
+            filteredData={this.state.filteredData}
+            displayChild={this.state.displayChild}
+            renderChildren={this.renderChildren}
+            expandParent={this.expandParent}
+          />
+        </div>
+        <Footer />
+      </React.Fragment>
     );
 
     if (this.state.data === null) {

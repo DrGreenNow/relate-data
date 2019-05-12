@@ -6,3 +6,14 @@
   color: green;
 }
 
+.flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .flexContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

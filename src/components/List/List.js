@@ -8,7 +8,7 @@ const list = props => (
     <ul>
       {props.filteredData.nodes.map(element => (
         <li key={element.id} onClick={() => props.expandParent(element.id)}>
-          {element.name}
+          <i className="fas fa-angle-right"></i>{element.name}
           {element.id === props.displayChild &&
             element.nodes &&
             props.renderChildren(element.nodes)}
