@@ -8,4 +8,4 @@ Each child node colored based on the field state of the object. In our case this
 
 In this project I added four "select" item. Depends of its description this Selects dynamically fills with data which tooks from the JSON. Before rendering I filtered this data and deleted all dublicate items. These "selects" have own filter functionality. Once the select changed his state the "Tree" refreshes depending on the filter select.
 
-http://drg.zzz.com.ua/
+http://drgr.zzz.com.ua/
