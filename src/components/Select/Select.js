@@ -8,15 +8,13 @@ const select = props => {
 
   return (
     <label>
-      <div className="WrapperSelect">
-        <p className="nameOfInput">{props.label}</p>
+        <p>{props.label}</p>
         <select onChange={props.onChange}>
-          <option>Choose {props.label}</option>
+          <option>Choose {props.filterKey}</option>
           {unique.map(element => (
             <option key={element.toString()}>{element}</option>
           ))}
         </select>
-      </div>
     </label>
   );
 };

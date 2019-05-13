@@ -1,10 +1,24 @@
 import React from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faGlobeAmericas,
+  faShippingFast,
+  faHdd,
+  faServer
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/NavBar";
+
+library.add(
+  faGlobeAmericas,
+  faShippingFast,
+  faHdd,
+  faServer
+);
 
 export default class App extends React.Component {
   state = {
@@ -26,12 +40,12 @@ export default class App extends React.Component {
     const result = nodes.map(el => {
       return (
         <li className={el.state === "up" ? "green" : "red"} key={el.id}>
-          {" "}
+          {"- "}
           {el.name}{" "}
         </li>
       );
     });
-    return <ul> {result} </ul>;
+    return <ul className="childUl">{result} </ul>;
   };
 
   expandParent = id => {

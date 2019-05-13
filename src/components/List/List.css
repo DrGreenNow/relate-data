@@ -2,20 +2,39 @@ ul {
   list-style-type: none;
   margin: 30px 0;
   font: 130 12px/1.5 Helvetica, Verdana, sans-serif;
-  background-color: #e8e6b9;
-  padding: 30px 0;
 }
 
 li {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  margin-left: 60px;
+  margin-left: 30px;
 }
-
-li:before {
-  content: "\27A4"; /* Добавляем в качестве маркера символ */
- }
 
 .WrapperList {
   width: 500px;
   padding: 0 10px;
+  margin: 0 5px 10px 0;
+  background-color: #e8e6b9;
+}
+
+.parentLi {
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+  cursor: default;
+}
+
+.green {
+  color: green;
+  cursor: default;
+}
+
+.myFolder {
+  margin-right: 10px;
+}
+
+.childUl {
+  cursor: default;
+  margin-top: 0;
 }
